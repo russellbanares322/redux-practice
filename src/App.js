@@ -1,10 +1,22 @@
+import { useSelector } from "react-redux";
 import "./App.css";
-import Counter from "./features/counter/Counter";
+import Navbar from "./components/Navbar";
+import Products from "./components/Products";
+import User from "./components/User";
+import Input from "./features/inputs/Input";
 
 function App() {
+  const { address, name, number } = useSelector((state) => state.inputs);
+
   return (
     <div className="App">
-      <Counter />
+      <h1 style={{ color: "purple" }}>{address}</h1>
+      <h1 style={{ color: "purple" }}>{name}</h1>
+      <h1 style={{ color: "purple" }}>{number}</h1>
+      <Input />
+      <Navbar />
+      <User />
+      <Products />
     </div>
   );
 }
